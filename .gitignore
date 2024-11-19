@@ -1,0 +1,48 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# Django
+*.sqlite3
+*.log
+.env
+
+# Docker
+*.pid
+*.seed
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+volumes/backend/blockchain_app/node_modules/
+
+# Ignore static files collected by collectstatic
+volumes/frontend/
+
+*.pem
+
+# Ignore Benjamin sh*ts
+*Mbappe*
+*Palmer*
+*bellingham*
+*benja*
+*Filli*
+*Mimi*
+*niko*
+*pepe*
+*neymar_avatar*
+
+
+user_data.json
