@@ -1,0 +1,8 @@
+{% load static %}
+{% load i18n %}
+
+<p id="startGame-winner" class="fs-1">{{ info.previous_winner_name }} {% trans "won" %}!</p>
+
+<button id="nextRound-button" class="btn btn-secondary rounded-0 fs-1 px-4">{% trans "Next Round" %}</button>
+
+<button id="startGame-button" class="btn btn-secondary rounded-0 fs-1 px-4" style="display: none;">{% trans "Start" %}</button>

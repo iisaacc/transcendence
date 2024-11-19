@@ -1,0 +1,85 @@
+{% load i18n %}
+{% load static %}
+<div id="play" class="page p-4">
+  <div
+    class="d-flex flex-column justify-content-center align-items-center ms-auto me-auto">
+    
+    <h1 class="mb-3 align-self-start pb-1">{% trans "Choose your Game" %}</h1>
+    
+    <form method="dialog" class="d-flex flex-column justify-content-center">
+      {% comment %} {% csrf_token %} {% endcomment %}
+
+      {% comment %} {% if form.non_field_errors %}
+        <div class="alert alert-danger fs-6 p-3">
+          <div class="errorlist nonfield m-0 p-0">
+            {{ form.non_field_errors.0 }}
+          </div>
+        </div>
+      {% endif %} {% endcomment %}
+
+      <div class="mb-3 btn-group mx-auto" role="group" aria-label="{% trans 'Game selection' %}">
+
+        <input type="radio" class="btn-check" name="chosenGame-play" id="blackhole" autocomplete="off" disabled>
+        <label class="btn btn-outline-success d-flex flex-column justify-content-between align-items-center p-3" for="blackhole" style="max-width: 250px;">
+          <h4 class="mb-3">Blackhole Surfer</h4>
+          <img src="{% static 'images/cover-blackhole-surfer.jpg' %}" alt="Blackhole Surfer" class="img-fluid">
+        </label>
+
+        <input type="radio" class="btn-check" name="chosenGame-play" id="pong" autocomplete="off" checked>
+        <label class="btn btn-outline-success d-flex flex-column justify-content-between align-items-center p-3" for="pong" style="max-width: 250px;">
+          <h4 class="mb-3">Space Pong</h4>
+          <img src="{% static 'images/cover-pong-8bits.jpg' %}" alt="Space Pong" class="img-fluid">
+        </label>
+      
+        <input type="radio" class="btn-check" name="chosenGame-play" id="cows" autocomplete="off">
+        <label class="btn btn-outline-success d-flex flex-column justify-content-between align-items-center p-3" for="cows" style="max-width: 250px;">
+          <h4 class="mb-3">Space Cows</h4>
+          <img src="{% static 'images/cover-cows.jpg' %}" alt="Space Cows" class="img-fluid">
+        </label>
+
+        <input type="radio" class="btn-check" name="chosenGame-play" id="exoploring" autocomplete="off" disabled>
+        <label class="btn btn-outline-success d-flex flex-column justify-content-between align-items-center p-3" for="exoploring" style="max-width: 250px;">
+          <h4 class="mb-3">ExoPloring</h4>
+          <img src="{% static 'images/cover-exoploring.jpg' %}" alt="ExoPloring" class="img-fluid">
+        </label>
+      
+      </div>
+
+      <div class="mb-3">
+        <p class="fs-6 mb-2">{% trans 'Select game mode:' %}</p>
+        <div class="btn-group" role="group" aria-label="{% trans 'Game mode selection' %}">
+
+          <input type="radio" class="btn-check" name="gameMode" id="localMode" autocomplete="off" checked onchange="toggleGameMode()">
+          <label class="btn btn-outline-success" for="localMode" style="min-width: 90px">{% trans 'Local' %}</label>
+        
+          <input type="radio" class="btn-check" name="gameMode" id="remoteMode" autocomplete="off" onchange="toggleGameMode()">
+          <label class="btn btn-outline-success" for="remoteMode" style="min-width: 90px">{% trans 'Remote' %}</label>
+
+          {% comment %} <input type="radio" class="btn-check" name="gameMode" id="AiMode" autocomplete="off" onchange="toggleGameMode()" disabled>
+          <label class="btn btn-outline-success" for="AiMode" style="min-width: 90px">{% trans 'AI' %}</label> {% endcomment %}
+        
+        </div>
+      </div>
+
+      <div id="error-div" class="alert alert-danger fs-6 p-3" style="display: none;";>
+        <div class="errorlist nonfield m-0 p-0">
+        </div>
+      </div>
+
+      <div class="mb-3 d-flex">
+        <div class="me-3">
+          <label for="player1-input" class="form-label">{{ info.p1_label }}</label>
+          <input type="text" class="form-control" id="player1-input" name="p1_name" value="{{ info.p1_value }}" required>
+        </div>
+        <div id="form-player2">
+          <label for="player2-input" class="form-label">{% trans 'Name Player' %} 2</label>
+          <input type="text" class="form-control" id="player2-input" name="p2_name" value="{% trans 'Name' %}2" required>
+        </div>
+      </div>
+      
+      <button id="play-game-button" type="button" class="btn btn-secondary" onclick="playGame()">{% trans "Play game" %}</button>
+      <button id="find-remote-button" type="button" class="btn btn-secondary" onclick="playGame()" style="display: none">{% trans "Find remote game" %}</button>
+
+    </form>
+  </div>
+</div>

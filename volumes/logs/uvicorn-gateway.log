@@ -1,0 +1,6 @@
+2024-11-19 15:07:51,884 INFO Started server process [76]
+2024-11-19 15:07:51,884 INFO Waiting for application startup.
+2024-11-19 15:07:51,884 INFO ASGI 'lifespan' protocol appears unsupported.
+2024-11-19 15:07:51,884 INFO Application startup complete.
+2024-11-19 15:10:00,057 INFO Shutting down
+2024-11-19 15:10:00,158 INFO Finished server process [76]

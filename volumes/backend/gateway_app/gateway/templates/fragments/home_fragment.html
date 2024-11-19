@@ -1,0 +1,15 @@
+{% load static %}
+{% load i18n %}
+<div id="home" class="page p-4">
+
+  {% if user.username %}
+  <h1>{% trans "Welcome" %}, <span class="text-danger">{{ user.username }}</span>!</h1>
+  {% else %}
+  <h1>{% trans "Welcome" %}</h1>
+  {% endif %}
+
+  <div class="col-md-6 floating">
+    <img src="{% static 'images/game/cow400.png' %}" alt="{% trans 'Cow in Space' %}" class="img-fluid rounded">
+  </div>
+
+</div>

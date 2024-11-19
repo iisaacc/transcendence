@@ -1,0 +1,27 @@
+{
+  "name": "hardhat-project",
+  "version": "6.0.0",
+  "description": "This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.16",
+    "hardhat-gas-reporter": "^1.0.0"
+  },
+  "dependencies": {
+    "abbrev": "^1.0.9",
+    "acorn": "^8.13.0",
+    "acorn-walk": "^8.3.4",
+    "adm-zip": "^0.4.16",
+    "aes-js": "^4.0.0-beta.5",
+    "agent-base": "^6.0.2",
+    "aggregate-error": "^3.1.0",
+    "ajv": "^8.17.1",
+    "amdefine": "^1.0.1",
+    "ansi-align": "^3.0.1",
+    "ansi-colors": "^4.1.3"
+  }
+}

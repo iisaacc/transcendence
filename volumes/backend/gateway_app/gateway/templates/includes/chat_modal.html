@@ -1,0 +1,99 @@
+{% load static %}
+{% load i18n %}
+
+<!-- Chat -->
+<div id="chatButton" class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050">
+	<img src="{% static 'images/chat_icon.png' %}" alt="Chat" data-bs-toggle="modal" data-bs-target="#chatModal" style="width: 100px; height: 100px; cursor: pointer;">
+	<span id="unreadChatscount" class="badge rounded-pill bg-danger position-absolute translate-middle" style="top: 30px; left: 90px; font-size: 1rem; padding: 0.5rem 0.7rem;">0</span>
+</div>
+
+<section id="chatSection">
+		<!-- Modal -->
+		<div class="modal fade" id="chatModal" tabindex="-2" aria-labelledby="chatModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg" style="height: 90vh;" role="document">
+				<div class="modal-content" style="background: linear-gradient(to left, #747474, #333333);">
+					<div class="modal-header d-flex justify-content-center align-items-center">
+						<h5 style="color: white; flex-grow: 1; text-align: center;" class="modal-title" id="chatModalLabel">{% trans "Chat messages" %}</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+
+					<!-- Main content: Contacts and Chat -->
+					<div class="modal-body">
+						<div class="row">
+							<!-- Contacts List (Left Column) -->
+							<div class="col-4" >
+								<input type="hidden" id="currentChatId" value="">
+								<div class="mb-3">
+									<h6 style="color: white;">{% trans "Contacts" %}</h6>
+									<ul class="list-group" id="contactList" style="height: 300px; overflow-y: auto;">
+                    {% comment %} Contacts will be loaded here {% endcomment %}
+									</ul>
+								</div>
+							</div>
+
+							<!-- Chat Content (Right Column) -->
+							<div class="col-8">
+								<!-- Sticky header with contact name and avatar -->
+								<div id="contactContainer" class="sticky-top bg-dark justify-content-between align-items-center rounded-3" style="z-index: 1; top: 0; background-color: #333; height: 70px; display: none;">
+									<div id="contactAvatarAndName" class="d-flex align-items-center">
+										<a id="contactAvatarLink" href="#">
+											<img id="contactAvatar" src="{% static 'images/game/cow400.png' %}" style="height: 3rem; width: 3rem; object-fit: cover; border-radius: 50%; border: 2px solid #fff;" class="me-2" alt="{% trans "avatar" %} 1">
+										</a>
+										<a id="contactDisplayNameLink" href="#">
+											<p id="contactDisplayName" class="m-0" style="color: white;">{% trans "Select a contact" %}</p>
+										</a>
+									</div>
+									<div id="contactGameInviteContainer" class="align-items-center position-relative">
+										<img src="/media/utils_icons/game_controller.png" onclick="toggleGameInvitePopup()" class="me-2" style="cursor: pointer; width: 5rem;" alt="{% trans 'Invite to play' %}">
+							
+										<!-- Popup de Invitación -->
+										<div id="gameInvitePopup" style="display: none; position: absolute; top: 3.5rem; left: 0; background-color: #333; border-radius: 8px; padding: 10px; width: 200px;">
+											<form method="post" id="chat-invite-play-0" action="{% url 'invite_to_play' 0 %}">
+												{% csrf_token %}
+
+												<div class="btn-group d-flex justify-content-between mb-2" role="group">
+
+													<input type="radio" class="btn-check" name="chosenGame" id="chat-pong-0" autocomplete="off" checked data-gametype="pong">
+													<label class="btn btn-outline-success p-1" for="chat-pong-0" style="width: 70px;">
+														<img src="{% static 'images/cover-pong-8bits.jpg' %}" alt="Space Pong" class="img-fluid rounded">
+													</label>
+                          
+													<input type="radio" class="btn-check" name="chosenGame" id="chat-cows-0" autocomplete="off" data-gametype="cows">
+													<label class="btn btn-outline-success p-1" for="chat-cows-0" style="width: 70px;">
+														<img src="{% static 'images/cover-cows.jpg' %}" alt="Space Cows" class="img-fluid rounded">
+													</label>
+
+												</div>
+												<button type="submit" class="btn btn-success w-100" onclick="toggleGameInvitePopup()">{% trans "Invite to play" %}</button>
+											</form>
+										</div>
+									</div>
+
+									<div id="blockSwitchContainer" class="d-flex align-items-center position-relative" style="display: none;">
+										<div id="blockSwitchDiv" class="form-check form-switch">
+											<input id="blockSwitch" data-user-id="" class="form-check-input" type="checkbox" {% if is_blocked %}checked{% endif %}>
+											<label class="form-check-label text-white" for="blockSwitch">{% trans "Block" %}</label>
+										</div>
+									</div>
+								</div>
+
+								<!-- Scrollable chat content -->
+								<div style="height: 300px; overflow-y: auto;">
+									<!-- Conversation -->
+									<div class="small p-2 me-3 mb-1 rounded-3" id="conversation"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Footer with message input -->
+					<div id="chat-modal-footer" class="modal-footer" style="display: none">
+						<div id="chat-log" class="input-group mb-0">
+							<input id="messageInput" type="text" class="form-control" placeholder="{% trans "Type message" %}" />
+							<button id="sendButton" class="btn btn-danger pt-2" type="button">{% trans "Send" %}</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</section>

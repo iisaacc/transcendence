@@ -1,0 +1,23 @@
+Django==4.2.16
+# For PostgreSQL
+psycopg2-binary==2.9.9
+# For HTTP requests to other microservice APIs
+requests==2.32.3 
+# For async HTTP requests
+aiohttp==3.10.10
+# ASGI server for WebSockets
+# daphne==4.1.2
+# uvicorn==0.30.6
+uvicorn[standard]
+# Channels for WebSockets
+channels==4.1.0
+# Image processing
+pillow==10.4.0
+# JWT
+pyjwt
+# For pretty logs
+prettyprinter
+# Blockchain
+web3
+# 2FA
+pyotp

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Callback</title>
+</head>
+<body>
+    <p>Processing OAuth Callback...</p>
+
+    <script>
+        // Function to set a cookie with a specified name, value, and expiration time
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Convert days to milliseconds
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/; secure; samesite=strict";
+        }
+
+        // Function to get URL parameters
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                code: params.get('code'),
+            };
+        }
+
+        // Extract the code and state from the query parameters
+        const { code} = getQueryParams();
+
+        if (code) {
+            // Log to the console for debugging
+            {% comment %} console.log('Extracted from popup URL - Code:', code); {% endcomment %}
+
+            // Set the OAuth code in a cookie
+            setCookie('oauth_code', code, 1); // Store it for 1 day, you can reduce the time if needed
+
+            // Close the popup window after storing the code in a cookie
+            window.close();
+        } else {
+            console.error('Code missing from popup URL.');
+        }
+    </script>
+</body>
+</html>

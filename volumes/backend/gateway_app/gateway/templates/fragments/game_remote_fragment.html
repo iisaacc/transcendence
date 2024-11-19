@@ -1,0 +1,63 @@
+{% load i18n %}
+{% load static %}
+<div id="game" class="page p-4">
+
+  <h1>{% trans "Game" %}</h1>
+
+  <div class="container-fluid d-flex flex-column align-items-center">
+
+    <div class="d-flex score container text-center align-items-start justify-content-around">
+
+      <div id="player1-container" class="col-4 mb-3">
+        <div class="d-flex align-items-center justify-content-center">
+          {% if info.p1_id != 0 %}
+            <img src="{{ "/media"|add:info.p1_avatar_url }}" alt="{% trans "user profile picture" %}" height="32" id="photoPlayer1">
+          {% else %}
+            <img src="{% static 'images/face_48.svg' %}" alt="{% trans "user profile picture" %}" height="32" id="photoPlayer1">
+          {% endif %}
+          <p id="namePlayer1" class="ps-2 m-0 fs-4">{{ info.p1_name }}</p>
+        </div>
+        <p class="scorePlayer1 fs-1 mb-0">0</p>
+      </div>
+
+      <div id="player2-container" class="col-4 mb-3">
+        <div class="d-flex align-items-center justify-content-center">
+          <p id="namePlayer2" class="pe-2 m-0 fs-4">{{ info.p2_name }}</p>
+          {% if info.p2_id != 0 %}
+            <img src="{{ "/media"|add:info.p2_avatar_url }}" alt="{% trans "user profile picture" %}" height="32" id="photoPlayer1">
+          {% else %}
+            <img src="{% static 'images/face_48.svg' %}" alt="{% trans "user profile picture" %}" height="32" id="photoPlayer1">
+          {% endif %}
+        </div>
+        <p class="scorePlayer2 fs-1 mb-0">0</p>
+      </div>
+
+    </div>
+
+    <!-- Game is displayed inside game-container -->
+    <div id="game-container" class="d-flex flex-column align-items-center justify-content-around">
+
+      <div class="d-flex flex-row align-items-center justify-content-between" style="width: 80%; height 100px">
+        <p> </p> {% comment %} keep for vertical alignement {% endcomment %}
+      </div>
+
+      <div>
+        <div class="form-check form-switch form-check-reverse d-flex align-items-center">
+          <label class="form-check-label fs-3 pe-2" for="player1-ready">{{ info.p1_name }}, {% trans "ready" %}?</label>
+          <input class="form-check-input fs-4 mt-0" type="checkbox" id="player1-ready" disabled>
+        </div>
+        <div class="form-check form-switch form-check-reverse d-flex align-items-center">
+          <label class="form-check-label fs-3 pe-2" for="player2-ready">{{ info.p2_name }}, {% trans "ready" %}?</label>
+          <input class="form-check-input fs-4 mt-0" type="checkbox" id="player2-ready" disabled>
+        </div>
+      </div>
+
+      <div id="keys-instructions" class="d-flex flex-row align-items-center justify-content-between" style="width: 80%;">
+        <p id="keysPlayer1" class="fs-4">{% trans "keys" %}: <span></span></p>
+        <p id="keysPlayer2" class="fs-4">{% trans "keys" %}: <span></span></p>
+      </div>
+
+    </div>
+  </div>
+
+</div>

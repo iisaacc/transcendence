@@ -1,0 +1,837 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VERSION DU PACKAGE\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-19 10:56+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: NOM COMPLET <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUE <LL@li.org>\n"
+"Language: français\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: gateway/consumerProxyCalcGameInvite.py:163
+#: gateway/consumerProxyCalcGameInvite.py:174
+#: gateway/consumerProxyCalcGameRemote.py:200
+#: gateway/consumerProxyCalcGameRemote.py:211
+msgid "Game starting..."
+msgstr "Le jeu commence..."
+
+#: gateway/consumerProxyCalcGameInvite.py:164
+#: gateway/consumerProxyCalcGameRemote.py:201
+msgid "You are the player on the left"
+msgstr "Vous êtes le joueur à gauche"
+
+#: gateway/consumerProxyCalcGameInvite.py:175
+#: gateway/consumerProxyCalcGameRemote.py:212
+msgid "You are the player on the right"
+msgstr "Vous êtes le joueur à droite"
+
+#: gateway/consumerProxyCalcGameInvite.py:487
+#: gateway/consumerProxyCalcGameRemote.py:517
+msgid "Forfeit"
+msgstr "Abandon"
+
+#: gateway/consumerProxyCalcGameInvite.py:488
+#: gateway/consumerProxyCalcGameRemote.py:518
+msgid "Your opponent has disconnected"
+msgstr "Votre adversaire s'est déconnecté"
+
+#: gateway/consumerProxyCalcGameInvite.py:508
+#: gateway/consumerProxyCalcGameInvite.py:528
+#: gateway/consumerProxyCalcGameInvite.py:562
+#: gateway/consumerProxyCalcGameRemote.py:548
+msgid "Cancelled"
+msgstr "Annulé"
+
+#: gateway/consumerProxyCalcGameInvite.py:509
+msgid "You cannot play with this user"
+msgstr "Vous ne pouvez pas jouer avec cet utilisateur"
+
+#: gateway/consumerProxyCalcGameInvite.py:529
+msgid "Player is not online anymore"
+msgstr "Le joueur n'est plus en ligne"
+
+#: gateway/consumerProxyCalcGameInvite.py:563
+#: gateway/consumerProxyCalcGameRemote.py:549
+msgid "You are already waiting for a game"
+msgstr "Vous attendez déjà un jeu"
+
+#: gateway/consumerProxyCalcGameTournament.py:118
+msgid "Semi-Final 1"
+msgstr "Demi-finale 1"
+
+#: gateway/consumerProxyCalcGameTournament.py:120
+#: gateway/consumerProxyCalcGameTournament.py:238
+msgid "Semi-Final 2"
+msgstr "Demi-finale 2"
+
+#: gateway/consumerProxyCalcGameTournament.py:122
+#: gateway/consumerProxyCalcGameTournament.py:240
+msgid "Final"
+msgstr "Finale"
+
+#: gateway/consumerProxyCalcGameTournament.py:137
+#: gateway/consumerProxyCalcGameTournament.py:253
+#: gateway/consumerProxyCalcGameTournament.py:256
+msgid "you play next in the tournament"
+msgstr "vous êtes le prochain à jouer dans le tournoi"
+
+#: gateway/forms.py:9
+msgid "Alphanumeric characters, underscores and hyphens only."
+msgstr "Caractères alphanumériques, tirets bas et tirets seulement."
+
+#: gateway/forms.py:17
+msgid "Letters and spaces only."
+msgstr "Lettres et espaces seulement."
+
+#: gateway/forms.py:28 gateway/forms.py:48 gateway/forms.py:97
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+#: gateway/forms.py:37 gateway/forms.py:57
+msgid "Password"
+msgstr "Mot de passe"
+
+#: gateway/forms.py:65
+msgid "Confirm password"
+msgstr "Confirmer le mot de passe"
+
+#: gateway/forms.py:77
+msgid "Friend's Name"
+msgstr "Nom de l'ami"
+
+#: gateway/forms.py:88
+msgid "Upload avatar"
+msgstr "Télécharger l'avatar"
+
+#: gateway/forms.py:107
+msgid "Display name"
+msgstr "Nom d'affichage"
+
+#: gateway/forms.py:117
+msgid "Country"
+msgstr "Pays"
+
+#: gateway/forms.py:127
+msgid "City"
+msgstr "Ville"
+
+#: gateway/forms.py:135
+msgid "Language"
+msgstr "Langue"
+
+#: gateway/forms.py:148
+msgid "New password"
+msgstr "Nouveau mot de passe"
+
+#: gateway/forms.py:156
+msgid "Confirm new password"
+msgstr "Confirmer le nouveau mot de passe"
+
+#: gateway/handleInvite.py:47 gateway/templates/base_index.html:92
+#: gateway/views.py:124
+msgid " has invited you to play: "
+msgstr " vous a invité à jouer : "
+
+#: gateway/handleInvite.py:67 gateway/templates/base_index.html:98
+msgid " is not connected. Game invite cancelled."
+msgstr " n'est pas connecté. Invitation de jeu annulée."
+
+#: gateway/handleMainRoom.py:31
+msgid "has accepted your friend request."
+msgstr "a accepté votre demande d'amis."
+
+#: gateway/handleMainRoom.py:33
+msgid "has declined your friend request."
+msgstr "a refusé votre demande d'amis."
+
+#: gateway/handleMainRoom.py:35
+msgid "is waiting to play "
+msgstr "attend pour jouer "
+
+#: gateway/handleMainRoom.py:37
+msgid "has declined the game request."
+msgstr "a refusé votre demande de jeu."
+
+#: gateway/handleMainRoom.py:39
+msgid "has canceled the game request."
+msgstr "a annulé la demande de jeu."
+
+#: gateway/handleMainRoom.py:111
+msgid "sent you a friend request"
+msgstr "t'a envoyé une demande d'amis"
+
+#: gateway/handleMainRoom.py:308 gateway/templates/base_index.html:100
+#: gateway/views.py:132
+msgid " has unblocked you."
+msgstr " vous a bloqué."
+
+#: gateway/handleMainRoom.py:310 gateway/templates/base_index.html:99
+#: gateway/views.py:131
+msgid " has blocked you."
+msgstr " vous a bloqué."
+
+#: gateway/templates/base_index.html:81
+msgid "Choose..."
+msgstr "Choisissez..."
+
+#: gateway/templates/base_index.html:88
+#: gateway/templates/includes/popupMessages.html:9 gateway/views.py:120
+msgid "Notification"
+msgstr "Notification"
+
+#: gateway/templates/base_index.html:89 gateway/views.py:121
+msgid " sent you a friend request."
+msgstr "t'a envoyé une demande d'amis"
+
+#: gateway/templates/base_index.html:90 gateway/views.py:122
+msgid " accepted your friend request."
+msgstr " a accepté votre demande d'amis."
+
+#: gateway/templates/base_index.html:91 gateway/views.py:123
+msgid " declined your friend request."
+msgstr " a refusé votre demande d'amis."
+
+#: gateway/templates/base_index.html:93 gateway/views.py:125
+msgid " has accepted your game request."
+msgstr " a accepté votre demande de jeu."
+
+#: gateway/templates/base_index.html:94 gateway/views.py:126
+msgid " has declined your game request."
+msgstr " a refusé votre demande de jeu."
+
+#: gateway/templates/base_index.html:95 gateway/views.py:127
+msgid " has cancelled the game request."
+msgstr " a annulé la demande de jeu."
+
+#: gateway/templates/base_index.html:96 gateway/views.py:128
+msgid " is waiting to play."
+msgstr " attend pour jouer."
+
+#: gateway/templates/base_index.html:97 gateway/views.py:129
+msgid " you play next in the tournament."
+msgstr "vous êtes le prochain à jouer dans le tournoi."
+
+#: gateway/templates/base_index.html:101 gateway/views.py:133
+msgid "Friend blocked successfully."
+msgstr "Ami bloqué avec succès."
+
+#: gateway/templates/base_index.html:102 gateway/views.py:134
+msgid "Friend unblocked successfully."
+msgstr "Ami débloqué avec succès."
+
+#: gateway/templates/base_index.html:103 gateway/views.py:135
+msgid "Form submission error. Please reload and retry."
+msgstr "Erreur de soumission du formulaire. Veuillez recharger et réessayer."
+
+#: gateway/templates/base_index.html:105 gateway/views.py:136
+msgid "No friends yet"
+msgstr "Pas encore d'amis"
+
+#: gateway/templates/base_index.html:106
+#: gateway/templates/includes/chat_modal.html:44 gateway/views.py:137
+msgid "Select a contact"
+msgstr "Sélectionnez un contact"
+
+#: gateway/templates/base_index.html:107 gateway/views.py:138
+msgid "Profile updated"
+msgstr "Profil mis à jour"
+
+#: gateway/templates/fragments/2FA_enable_fragment.html:5
+msgid "Enter OTP"
+msgstr "Entrez le code OTP"
+
+#: gateway/templates/fragments/2FA_enable_fragment.html:6
+msgid "Confirm OTP"
+msgstr "Confirmer le code OTP"
+
+#: gateway/templates/fragments/2FA_verify_fragment.html:5
+msgid "required"
+msgstr "requis"
+
+#: gateway/templates/fragments/2FA_verify_fragment.html:13
+msgid "Enter 2FA Code"
+msgstr "Entrez le code 2FA"
+
+#: gateway/templates/fragments/2FA_verify_fragment.html:14
+msgid "Enter Code"
+msgstr "Entrez le code"
+
+#: gateway/templates/fragments/2FA_verify_fragment.html:20
+msgid "Verify"
+msgstr "Vérifier"
+
+#: gateway/templates/fragments/401_fragment.html:5
+msgid "Unauthorized"
+msgstr "Non autorisé"
+
+#: gateway/templates/fragments/401_fragment.html:6
+msgid "Please, login before proceeding."
+msgstr "Veuillez vous connecter avant de continuer."
+
+#: gateway/templates/fragments/404_fragment.html:3
+msgid "Page Not Found"
+msgstr "Page non trouvée"
+
+#: gateway/templates/fragments/404_fragment.html:4
+msgid "The page you're looking for does not exist."
+msgstr "La page que vous recherchez n'existe pas."
+
+#: gateway/templates/fragments/405_fragment.html:3
+msgid "Method Not Allowed"
+msgstr "Méthode non autorisée"
+
+#: gateway/templates/fragments/edit_profile_fragment.html:3
+#: gateway/templates/fragments/profile_fragment.html:27
+#: gateway/templates/includes/header.html:61
+msgid "Edit profile"
+msgstr "Modifier le profil"
+
+#: gateway/templates/fragments/edit_profile_fragment.html:33
+msgid "Upload Avatar"
+msgstr "Télécharger l'avatar"
+
+#: gateway/templates/fragments/edit_profile_fragment.html:43
+msgid "User Info"
+msgstr "Informations utilisateur"
+
+#: gateway/templates/fragments/edit_profile_fragment.html:62
+msgid "Preferred language"
+msgstr "Langue préférée"
+
+#: gateway/templates/fragments/edit_profile_fragment.html:65
+msgid "English"
+msgstr "Anglais"
+
+#: gateway/templates/fragments/edit_profile_fragment.html:68
+msgid "Spanish"
+msgstr "Espagnol"
+
+#: gateway/templates/fragments/edit_profile_fragment.html:71
+msgid "French"
+msgstr "Français"
+
+#: gateway/templates/fragments/edit_profile_fragment.html:75
+msgid "Submit"
+msgstr "Envoyer"
+
+#: gateway/templates/fragments/edit_profile_fragment.html:86
+msgid "Security"
+msgstr "Sécurité"
+
+#: gateway/templates/fragments/edit_profile_fragment.html:104
+msgid "Change Password"
+msgstr "Envoyer"
+
+#: gateway/templates/fragments/edit_profile_fragment.html:108
+msgid "Disable"
+msgstr "Désactiver"
+
+#: gateway/templates/fragments/edit_profile_fragment.html:109
+msgid "Enable"
+msgstr "Activer"
+
+#: gateway/templates/fragments/friend_profile_fragment.html:13
+#: gateway/templates/includes/chat_modal.html:76
+msgid "Block"
+msgstr "Bloquer"
+
+#: gateway/templates/fragments/friend_profile_fragment.html:23
+msgid "Send friend request"
+msgstr "Envoyer une demande d'ami"
+
+#: gateway/templates/fragments/friend_profile_fragment.html:24
+#: gateway/templates/fragments/myfriends_fragment.html:62
+#: gateway/templates/includes/chat_modal.html:48
+#: gateway/templates/includes/chat_modal.html:68
+msgid "Invite to play"
+msgstr "Inviter à jouer"
+
+#: gateway/templates/fragments/friend_profile_fragment.html:63
+#: gateway/templates/fragments/match_history_fragment.html:5
+msgid "Game statistics"
+msgstr "Statistiques de jeu"
+
+#: gateway/templates/fragments/friend_profile_fragment.html:66
+#: gateway/templates/fragments/match_history_fragment.html:10
+#: gateway/templates/fragments/userprofile_fragment.html:47
+msgid "Games"
+msgstr "Jeux"
+
+#: gateway/templates/fragments/friend_profile_fragment.html:70
+#: gateway/templates/fragments/match_history_fragment.html:14
+#: gateway/templates/fragments/userprofile_fragment.html:48
+msgid "Wins"
+msgstr "Victoires"
+
+#: gateway/templates/fragments/friend_profile_fragment.html:74
+#: gateway/templates/fragments/match_history_fragment.html:18
+msgid "Loses"
+msgstr "Défaites"
+
+#: gateway/templates/fragments/friend_profile_fragment.html:81
+#: gateway/templates/fragments/match_history_fragment.html:25
+msgid "Total score"
+msgstr "Score total"
+
+#: gateway/templates/fragments/friend_profile_fragment.html:85
+#: gateway/templates/fragments/match_history_fragment.html:29
+#: gateway/templates/fragments/userprofile_fragment.html:50
+msgid "Winrate"
+msgstr "Taux de victoire"
+
+#: gateway/templates/fragments/game_end_fragment.html:4
+#: gateway/templates/fragments/tournament_next_game_fragment.html:4
+msgid "won"
+msgstr "a gagné"
+
+#: gateway/templates/fragments/game_end_fragment.html:8
+msgid "Go back to Play "
+msgstr "Retourner jouer"
+
+#: gateway/templates/fragments/game_fragment.html:5
+#: gateway/templates/fragments/game_remote_fragment.html:5
+msgid "Game"
+msgstr "Jeu"
+
+#: gateway/templates/fragments/game_fragment.html:14
+#: gateway/templates/fragments/game_fragment.html:16
+#: gateway/templates/fragments/game_fragment.html:26
+#: gateway/templates/fragments/game_remote_fragment.html:14
+#: gateway/templates/fragments/game_remote_fragment.html:16
+#: gateway/templates/fragments/game_remote_fragment.html:27
+#: gateway/templates/fragments/game_remote_fragment.html:29
+#: gateway/templates/fragments/tournament_start_fragment.html:13
+#: gateway/templates/fragments/tournament_start_fragment.html:15
+#: gateway/templates/fragments/tournament_start_fragment.html:26
+#: gateway/templates/fragments/tournament_start_fragment.html:28
+msgid "user profile picture"
+msgstr "Image de profil de l'utilisateur"
+
+#: gateway/templates/fragments/game_fragment.html:41
+#: gateway/templates/fragments/tournament_next_game_fragment.html:8
+#: gateway/templates/fragments/tournament_start_fragment.html:44
+msgid "Start"
+msgstr "Démarrer"
+
+#: gateway/templates/fragments/game_fragment.html:44
+#: gateway/templates/fragments/game_fragment.html:45
+#: gateway/templates/fragments/game_remote_fragment.html:57
+#: gateway/templates/fragments/game_remote_fragment.html:58
+#: gateway/templates/fragments/tournament_start_fragment.html:47
+#: gateway/templates/fragments/tournament_start_fragment.html:48
+msgid "keys"
+msgstr "touches"
+
+#: gateway/templates/fragments/game_remote_fragment.html:47
+#: gateway/templates/fragments/game_remote_fragment.html:51
+msgid "ready"
+msgstr "prêt"
+
+#: gateway/templates/fragments/home_fragment.html:6
+#: gateway/templates/fragments/home_fragment.html:8
+msgid "Welcome"
+msgstr "Bienvenue"
+
+#: gateway/templates/fragments/home_fragment.html:12
+#: gateway/templates/fragments/waiting_room.html:9
+msgid "Cow in Space"
+msgstr "Vache dans l'espace"
+
+#: gateway/templates/fragments/login_fragment.html:4
+#: gateway/templates/fragments/login_fragment.html:29
+#: gateway/templates/includes/header.html:40
+msgid "Log In"
+msgstr "Se connecter"
+
+#: gateway/templates/fragments/login_fragment.html:38
+msgid "Login with 42"
+msgstr "Se connecter avec 42"
+
+#: gateway/templates/fragments/login_fragment.html:41
+msgid "Don't have an account?"
+msgstr "Vous n'avez pas de compte ?"
+
+#: gateway/templates/fragments/match_history_fragment.html:42
+msgid "Game History"
+msgstr "Historique des jeux"
+
+#: gateway/templates/fragments/match_history_fragment.html:47
+#: gateway/templates/fragments/userprofile_fragment.html:110
+msgid "Date"
+msgstr "Date"
+
+#: gateway/templates/fragments/match_history_fragment.html:48
+#: gateway/templates/fragments/userprofile_fragment.html:111
+msgid "Type"
+msgstr "Type"
+
+#: gateway/templates/fragments/match_history_fragment.html:49
+msgid "Player 1"
+msgstr "Joueur 1"
+
+#: gateway/templates/fragments/match_history_fragment.html:50
+msgid "Player 2"
+msgstr "Joueur 2"
+
+#: gateway/templates/fragments/match_history_fragment.html:51
+#: gateway/templates/fragments/userprofile_fragment.html:114
+msgid "Result"
+msgstr "Résultat"
+
+#: gateway/templates/fragments/match_history_fragment.html:52
+#: gateway/templates/fragments/userprofile_fragment.html:117
+msgid "Winner"
+msgstr "Gagnant"
+
+#: gateway/templates/fragments/myfriends_fragment.html:5
+#: gateway/templates/fragments/profile_fragment.html:29
+#: gateway/templates/includes/header.html:67
+msgid "My friends"
+msgstr "Mes amis"
+
+#: gateway/templates/fragments/myfriends_fragment.html:44
+msgid "This user has blocked you."
+msgstr "Cet utilisateur vous a bloqué."
+
+#: gateway/templates/fragments/myfriends_fragment.html:49
+#: gateway/templates/fragments/play_fragment.html:22
+#: gateway/templates/fragments/tournament_form_fragment.html:13
+msgid "Game selection"
+msgstr "Sélection du jeu"
+
+#: gateway/templates/fragments/myfriends_fragment.html:66
+msgid "This user is blocked and cannot be invited to play."
+msgstr "Cet utilisateur est bloqué et ne peut pas être invité à jouer."
+
+#: gateway/templates/fragments/myfriends_fragment.html:83
+msgid "Let's make some "
+msgstr "Faisons des "
+
+#: gateway/templates/fragments/myfriends_fragment.html:84
+msgid "friends"
+msgstr "amis"
+
+#: gateway/templates/fragments/play_fragment.html:7
+msgid "Choose your Game"
+msgstr "Choisissez votre jeu"
+
+#: gateway/templates/fragments/play_fragment.html:51
+msgid "Select game mode:"
+msgstr "Sélectionnez le mode de jeu :"
+
+#: gateway/templates/fragments/play_fragment.html:52
+msgid "Game mode selection"
+msgstr "Sélection du mode de jeu"
+
+#: gateway/templates/fragments/play_fragment.html:55
+msgid "Local"
+msgstr "Local"
+
+#: gateway/templates/fragments/play_fragment.html:58
+msgid "Remote"
+msgstr "À distance"
+
+#: gateway/templates/fragments/play_fragment.html:78
+#: gateway/templates/fragments/tournament_form_fragment.html:43
+#: gateway/templates/fragments/tournament_form_fragment.html:48
+#: gateway/templates/fragments/tournament_form_fragment.html:53
+#: gateway/viewsPlay.py:34 gateway/viewsPlay.py:59
+msgid "Name Player"
+msgstr "Nom du joueur"
+
+#: gateway/templates/fragments/play_fragment.html:79
+#: gateway/templates/fragments/tournament_form_fragment.html:44
+#: gateway/templates/fragments/tournament_form_fragment.html:49
+#: gateway/templates/fragments/tournament_form_fragment.html:54
+#: gateway/viewsPlay.py:35 gateway/viewsPlay.py:60
+msgid "Name"
+msgstr "Nom"
+
+#: gateway/templates/fragments/play_fragment.html:83
+msgid "Play game"
+msgstr "Jouer"
+
+#: gateway/templates/fragments/play_fragment.html:84
+msgid "Find remote game"
+msgstr "Trouver un jeu à distance"
+
+#: gateway/templates/fragments/profile_fragment.html:6
+msgid "Profile page"
+msgstr "Page de profil"
+
+#: gateway/templates/fragments/profile_fragment.html:12
+#: gateway/templates/includes/header.html:51
+msgid "default icon"
+msgstr "Icône par défaut"
+
+#: gateway/templates/fragments/profile_fragment.html:28
+#: gateway/templates/includes/header.html:64
+msgid "Stats"
+msgstr "Statistiques"
+
+#: gateway/templates/fragments/profile_fragment.html:33
+msgid "Invite a friend"
+msgstr "Inviter un ami"
+
+#: gateway/templates/fragments/profile_fragment.html:46
+msgid "Let's invite a friend"
+msgstr "Invitons un ami"
+
+#: gateway/templates/fragments/profile_fragment.html:64
+msgid "Close"
+msgstr "Fermer"
+
+#: gateway/templates/fragments/profile_fragment.html:65
+msgid "Send invite"
+msgstr "Envoyer une invitation"
+
+#: gateway/templates/fragments/signup_fragment.html:7
+#: gateway/templates/fragments/signup_fragment.html:38
+#: gateway/templates/includes/header.html:35
+msgid "Sign Up"
+msgstr "S'inscrire"
+
+#: gateway/templates/fragments/signup_fragment.html:41
+msgid "Already have an account?"
+msgstr "Vous avez déjà un compte ?"
+
+#: gateway/templates/fragments/tournament_end_fragment.html:6
+msgid "And the grand winner is:"
+msgstr "Et le grand gagnant est :"
+
+#: gateway/templates/fragments/tournament_form_fragment.html:7
+#: gateway/templates/fragments/userprofile_fragment.html:52
+#: gateway/templates/includes/header.html:29
+msgid "Tournament"
+msgstr "Tournoi"
+
+#: gateway/templates/fragments/tournament_form_fragment.html:11
+msgid "Choose game:"
+msgstr "Choisissez le jeu :"
+
+#: gateway/templates/fragments/tournament_form_fragment.html:29
+msgid "Enter player names:"
+msgstr "Saisissez les noms des joueurs :"
+
+#: gateway/templates/fragments/tournament_form_fragment.html:59
+msgid "Start Tournament"
+msgstr "Démarrer le tournoi"
+
+#: gateway/templates/fragments/tournament_next_game_fragment.html:6
+msgid "Next Round"
+msgstr "Prochain tour"
+
+#: gateway/templates/fragments/userprofile_fragment.html:37
+msgid "Statistics"
+msgstr "Statistiques"
+
+#: gateway/templates/fragments/userprofile_fragment.html:49
+msgid "Losses"
+msgstr "Défaites"
+
+#: gateway/templates/fragments/userprofile_fragment.html:53
+msgid "Tournament wins"
+msgstr "Victoires en tournoi"
+
+#: gateway/templates/fragments/userprofile_fragment.html:101
+msgid "Match History"
+msgstr "Historique des matchs"
+
+#: gateway/templates/fragments/userprofile_fragment.html:113
+#: gateway/templates/fragments/userprofile_fragment.html:115
+msgid "Player"
+msgstr "Joueur"
+
+#: gateway/templates/fragments/waiting_room.html:5
+msgid "Waiting for player..."
+msgstr "En attente d'un joueur..."
+
+#: gateway/templates/includes/chat_modal.html:16
+msgid "Chat messages"
+msgstr "Messages de discussion"
+
+#: gateway/templates/includes/chat_modal.html:27
+msgid "Contacts"
+msgstr "Contacts"
+
+#: gateway/templates/includes/chat_modal.html:41
+msgid "avatar"
+msgstr "avatar"
+
+#: gateway/templates/includes/chat_modal.html:93
+msgid "Type message"
+msgstr "Tapez un message"
+
+#: gateway/templates/includes/chat_modal.html:94
+msgid "Send"
+msgstr "Envoyer"
+
+#: gateway/templates/includes/header.html:10
+msgid "Toggle navigation"
+msgstr "Basculer la navigation"
+
+#: gateway/templates/includes/header.html:19
+msgid "Home"
+msgstr "Accueil"
+
+#: gateway/templates/includes/header.html:24
+msgid "Play"
+msgstr "Jouer"
+
+#: gateway/templates/includes/header.html:58
+msgid "Profile"
+msgstr "Profil"
+
+#: gateway/templates/includes/header.html:73
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: gateway/templates/includes/header.html:138
+msgid "You have no notifications"
+msgstr "Vous n'avez pas de notifications"
+
+#: gateway/views.py:93
+msgid "Error retrieving friends"
+msgstr "Erreur lors de la récupération des amis"
+
+#: gateway/views.py:130
+msgid "  is not connected. Game invite cancelled."
+msgstr " n'est pas connecté. Invitation de jeu annulée."
+
+#: gateway/viewsAuth.py:42
+msgid "Logged out successfully"
+msgstr "Déconnexion réussie"
+
+#: gateway/viewsAuth.py:59
+msgid "Failed to log out"
+msgstr "Échec de la déconnexion"
+
+#: gateway/viewsAuth.py:104 gateway/viewsAuth.py:187
+#: gateway/viewsProfile.py:203 gateway/viewsProfile.py:301
+msgid "Invalid form data"
+msgstr "Données de formulaire invalides"
+
+#: gateway/viewsAuth.py:267
+msgid "No message provided"
+msgstr "Aucun message fourni"
+
+#: gateway/viewsAuth.py:295
+msgid "Failed to login with 42"
+msgstr "Échec de la connexion avec 42"
+
+#: gateway/viewsAuth.py:330
+msgid "Invalid request method. Use POST."
+msgstr "Méthode de requête invalide. Utilisez POST."
+
+#: gateway/viewsAuth.py:337
+msgid "OTP code is required"
+msgstr "Le code OTP est requis"
+
+#: gateway/viewsAuth.py:339
+msgid "Invalid JSON format"
+msgstr "Format JSON invalide"
+
+#: gateway/viewsInvitation.py:70
+msgid "Username not valid"
+msgstr "Nom d'utilisateur non valide"
+
+#: gateway/viewsInvitation.py:85 gateway/viewsInvitation.py:92
+msgid "Already friends"
+msgstr "Déjà amis"
+
+#: gateway/viewsInvitation.py:99 gateway/viewsInvitation.py:142
+msgid "You cannot invite yourself"
+msgstr "Vous ne pouvez pas vous inviter vous-même"
+
+#: gateway/viewsInvitation.py:106
+msgid "Invitation already sent"
+msgstr "Invitation déjà envoyée"
+
+#: gateway/viewsInvitation.py:113
+msgid "Invitation sent!"
+msgstr "Invitation envoyée !"
+
+#: gateway/viewsInvitation.py:134
+msgid "Add this player as a friend before inviting them to play"
+msgstr "Ajoutez ce joueur comme ami avant de l'inviter à jouer"
+
+#: gateway/viewsInvitation.py:154
+msgid "Invalid JSON data"
+msgstr "Format JSON invalide"
+
+#: gateway/viewsInvitation.py:163
+msgid "Invitation to play sent!"
+msgstr "Invitation à jouer envoyée !"
+
+#: gateway/viewsInvitation.py:196
+msgid "You cannot block yourself"
+msgstr "Vous ne pouvez pas vous bloquer vous-même"
+
+#: gateway/viewsInvitation.py:220 gateway/viewsInvitation.py:270
+msgid "User blocked"
+msgstr "Utilisateur bloqué"
+
+#: gateway/viewsInvitation.py:222 gateway/viewsInvitation.py:272
+msgid "An error occured"
+msgstr "Une erreur s'est produite"
+
+#: gateway/viewsInvitation.py:246
+msgid "You cannot unblock yourself"
+msgstr "Vous ne pouvez pas vous débloquer vous-même"
+
+#: gateway/viewsProfile.py:172
+msgid "Error retrieving match history"
+msgstr "Erreur lors de la récupération de l'historique des matchs"
+
+#: gateway/viewsProfile.py:247
+msgid "Display name cannot be empty"
+msgstr "Le nom d'affichage ne peut pas être vide."
+
+#: gateway/viewsProfile.py:250
+msgid "City cannot be empty"
+msgstr "La ville ne peut pas être vide."
+
+#: gateway/viewsProfile.py:253
+msgid "Country cannot be empty"
+msgstr "Le pays ne peut pas être vide."
+
+#: gateway/viewsProfile.py:257
+msgid "Display name cannot contain spaces"
+msgstr "Le nom d'affichage ne peut pas contenir d'espaces."
+
+#: gateway/viewsProfile.py:264
+msgid "Username cannot be empty"
+msgstr "Nom d'utilisateur ne peut pas être vide."
+
+#: gateway/viewsProfile.py:267
+msgid "Username cannot contain spaces"
+msgstr "Le nom d'utilisateur ne peut pas contenir d'espaces."
+
+#: gateway/viewsProfile.py:378 gateway/viewsProfile.py:409
+msgid "Please select an image file"
+msgstr "Veuillez sélectionner une image à télécharger"
+
+#~ msgid "This field cannot be empty."
+#~ msgstr "Ce champ ne peut pas être vide."
+
+#~ msgid "Method not allowed"
+#~ msgstr "Méthode non autorisée"
+
+#~ msgid "You have blocked "
+#~ msgstr "Utilisateur bloqué"
+
+#~ msgid "Recipient's username"
+#~ msgstr "Nom d'utilisateur du destinataire"
+
+#~ msgid "User unblocked"
+#~ msgstr "Utilisateur débloqué"

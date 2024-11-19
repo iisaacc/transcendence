@@ -1,0 +1,22 @@
+{% load i18n %}
+<div id="two-fa-required" class="page p-4">
+    <div class="d-flex flex-column justify-content-center align-items-center ms-auto me-auto text-center" style="width: 300px;">
+      <h1 class="mb-4 font-weight-bold">
+        2FA <span class="text-danger">{% trans "required" %}</span>
+      </h1>
+  
+      <!-- Feedback message area -->
+      <div id="2fa-message" class="mb-3"></div>
+  
+      <!-- 2FA Code submission form -->
+      <div class="mb-3">
+        <label for="otp_code" class="form-label">{% trans "Enter 2FA Code" %}</label>
+        <input type="text" id="otp_code" placeholder="{% trans 'Enter Code' %}" class="form-control text-center" required>
+      </div>
+  
+      <div id="config2FA" hidden="true" user-id-2fa="{{ USER_ID }}"></div>
+
+      <!-- Verify button -->
+      <button class="btn btn-secondary w-100" onclick="verify2FA()">{% trans "Verify" %}</button>
+    </div>
+</div>

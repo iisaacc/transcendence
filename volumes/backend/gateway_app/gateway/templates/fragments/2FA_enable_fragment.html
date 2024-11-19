@@ -1,0 +1,12 @@
+{% load i18n %}
+<div id="2fa-enable-success" class="card-body text-center">
+  <img src="{{ data.qr_code }}" alt="QR Code 2FA" style="max-width: 200px">
+  <p class="text-success mt-2">{{ data.message }}</p>
+  <input type="text" id="otp-code" placeholder="{% trans "Enter OTP" %}" class="form-control mt-2">
+  <button class="btn btn-success mt-2" onclick="confirm2FA()">{% trans "Confirm OTP" %} 2FA</button>
+</div>
+
+<div id="2fa-enable-error" class="card-body">
+  <p class="text-danger">{{ data.message }}</p>
+</div>
+            

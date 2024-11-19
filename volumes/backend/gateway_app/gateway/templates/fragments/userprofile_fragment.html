@@ -1,0 +1,159 @@
+{% load static %}
+{% load i18n %}
+
+{% comment %} Player name and picture {% endcomment %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="card border-0 shadow-sm">
+
+        <div class="card-body d-flex align-items-center justify-content-between">
+          <div class="">
+            <img src="{% if target.avatar %}/media/{{ target.avatar }}{% else %}{% static 'images/default-avatar.svg' %}" alt="{{ target.username }}{% endif %}" class="rounded-circle" width="120">
+          </div>
+
+          <div class="text-center">
+            <h1 class="fw-bold text-danger">{{ target.username }}</h1>
+            <p class="text-muted">{{ target.profile.city }}, {{ target.profile.country }}</p>
+          </div>
+          
+          <div style="width: 120px;">{% comment %} for alignment {% endcomment %}</div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% comment %} Player stats {% endcomment %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      
+      <h2 class="text-center">{% trans "Statistics" %}</h2>
+
+      <div class="card shadow mt-4">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-striped fs-5 mb-0">
+              
+              <thead class="text-center">
+                <tr>
+                  <th></th>
+                  <th>{% trans "Games" %}</th>
+                  <th>{% trans "Wins" %}</th>
+                  <th>{% trans "Losses" %}</th>
+                  <th>{% trans "Winrate" %}</th>
+                  <td class="vertical-line p-0"></td>
+                  <th>{% trans "Tournament" %}</th>
+                  <th>{% trans "Tournament wins" %}</th>
+                </tr>
+              </thead>
+
+              <tbody class="text-center">
+                <tr class="align-middle">
+                  <td class="d-flex align-items-center p-1" style="width: max-content;">
+                    <img src="{% static 'images/cover-pong-8bits.jpg' %}" alt="Space Pong" class="img-fluid" style="width: 48px;">
+                    <span class="ms-2">Pong</span>
+                  </td>
+                  <td>{{ data.pong.count }}</td>
+                  <td class="text-success">{{ data.pong.wins }}</td>
+                  <td class="text-danger">{{ data.pong.losses }}</td>
+                  <td>{{ data.pong.winrate }}</td>
+                  <td class="vertical-line"></td>
+                  <td>{{ data.pong.t_count }}</td>
+                  <td>{{ data.pong.t_wins }}{% if data.pong.t_wins > 0 %} &#x1F3C6;{% endif %}</td>
+                </tr>                
+                <tr class="align-middle">
+                  <td class="d-flex align-items-center p-1" style="width: max-content;">
+                    <img src="{% static 'images/cover-cows.jpg' %}" alt="Space Cows" title="Space Cows" class="img-fluid" style="width: 48px;">
+                    <span class="ms-2">Cows</span>
+                  </td>
+                  <td>{{ data.cows.count }}</td>
+                  <td class="text-success">{{ data.cows.wins }}</td>
+                  <td class="text-danger">{{ data.cows.losses }}</td>
+                  <td>{{ data.cows.winrate }}</td>
+                  <td class="vertical-line"></td>
+                  <td>{{ data.cows.t_count }}</td>
+                  <td>{{ data.cows.t_wins }}{% if data.cows.t_wins > 0 %} &#x1F3C6;{% endif %}</td>
+                </tr>                
+              </tbody>
+
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% comment %} Match History {% endcomment %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+
+      <h2 class="text-center">{% trans "Match History" %}</h2>
+
+      <div class="card shadow mt-4" style="max-height: 400px; overflow: auto;">
+        <div class="card-body px-0">
+          <div class="table-responsive">
+            <table class="table table-striped mb-0">
+
+              <thead class="text-center">
+                <tr>
+                  <th class="date-column">{% trans "Date" %}</th>
+                  <th>{% trans "Type" %}</th>
+                  <th class="vertical-line p-0"></th>
+                  <th>{% trans "Player" %} 1</th>
+                  <th>{% trans "Result" %}</th>
+                  <th>{% trans "Player" %} 2</th>
+                  <th class="vertical-line p-0"></th>
+                  <th>{% trans "Winner" %}</th>
+                </tr>
+              </thead>
+
+              <tbody class="text-center">
+                {% for game in data.games_list %}
+                  <tr class="{% if game.game_winner_id|stringformat:"i" == target.user_id|stringformat:"i" %} table-success text-white {% else %} table-danger text-white {% endif %}">
+                    <td class="date-column">{{ game.date }}</td>
+                    <td>{{ game.game_type }}</td>
+                    <td class="vertical-line p-0"></td>
+                    <td>
+                      {% if game.p1_id == target.user_id %}
+                        {{ target.username }}
+                      {% else %}
+                        {% if game.p1_id != 0 %}
+                          <a href="{% url 'user_profile' game.p1_id %}" onclick="navigate(event, '{% url 'user_profile' game.p1_id %}')" class="link-dark">{{ game.p1_name }}</a>
+                        {% else %}
+                          {{ game.p1_name }}
+                        {% endif %}
+                      {% endif %}
+                    </td>
+                    <td>{{ game.p1_score }} - {{ game.p2_score }}</td>
+                    <td>
+                      {% if game.p2_id == target.user_id %}
+                        {{ target.username }}
+                      {% else %}
+                        {% if game.p2_id != 0 %}
+                          <a href="{% url 'user_profile' game.p2_id %}"onclick="navigate(event, '{% url 'user_profile' game.p2_id %}')" class="link-dark">{{ game.p2_name }}</a>
+                        {% else %}
+                          {{ game.p2_name }}
+                        {% endif %}
+                      {% endif %}
+                    </td>
+                    <td class="vertical-line p-0"></td>
+                    <td>{% if target.user_id == game.game_winner_id %}{{ target.username }}{% else %}{{ game.game_winner_name }}{% endif %}</td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

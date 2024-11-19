@@ -1,0 +1,10 @@
+{% load static %}
+{% load i18n %}
+<div id="tournament" class="page p-4 d-flex flex-column justify-content-center align-items-center">
+
+  <div class="position-relative mt-5" style="height: 500px;">
+    <h1 class="floating">{% trans "And the grand winner is:" %}</h1>
+    <h2 class="kow-ball" style="width: max-content;">&#x1F3C6; {{ info.tournament.t_winner_name }}! &#x1F3C6;</h2>
+  </div>
+  
+</div>

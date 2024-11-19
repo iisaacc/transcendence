@@ -1,0 +1,13 @@
+{% load static %}
+{% load i18n %}
+<div id="waiting-room" class="page p-4">
+
+  <h1>{% trans "Waiting for player..." %}</h1>
+
+  <div class="kow-pong-container">
+    <div class="paddle left-paddle"></div>
+    <img src="{% static 'images/game/cow400.png' %}" alt="{% trans 'Cow in Space' %}" class="img-fluid rounded kow-ball">
+    <div class="paddle right-paddle"></div>
+  </div>
+
+</div>

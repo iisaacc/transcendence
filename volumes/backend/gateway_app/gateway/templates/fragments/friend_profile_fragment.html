@@ -1,0 +1,96 @@
+{% load i18n %}
+{% load static %}
+
+<div class="container">
+    <div class="main-body">
+        <div class="row gutters-sm">
+            <div class="col-12 mb-3">
+                <div class="card border-0 shadow-sm mt-3">
+                    <div class="card-body text-center position-relative">
+                        <div class="position-absolute top-0 end-0 p-2">
+                            <div class="form-check form-switch">
+                                <input id="blockSwitch-{{ profile_data.user_id }}" data-user-id="{{ profile_data.user_id }}" class="form-check-input" type="checkbox"  onchange="blockFriend({{ profile_data.user_id }})" {% if is_blocked %}checked{% endif %}>
+                                <label class="form-check-label" for="blockSwitch-{{ profile_data.user_id }}">{% trans "Block" %}</label>
+                            </div>
+                        </div>
+                        <img src="{% if profile_data.avatar %}{{ profile_data.avatar }}{% else %}{% static 'images/default-avatar.svg' %}" alt="{{ profile_data.username }}{% endif %}" class="rounded-circle" width="150">
+                        <div class="mt-3">
+                            <h4 class="fw-bold">{{ profile_data.username }}</h4>
+                            <p class="text-muted">{{ profile_data.city }}, {{ profile_data.country }}</p>
+                            <button class="btn btn-danger btn-sm">
+                                <i class="fas fa-comments"></i> <!-- Ícono de chat -->
+                            </button>
+                            <button id="friend_request" class="btn btn-outline-danger btn-sm">{% trans "Send friend request" %}</button>
+                            <button id="invite_play" class="btn btn-danger btn-sm">{% trans "Invite to play" %}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row gutters-sm">
+            <div class="col-md-6 mb-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h6 class="d-flex align-items-center mb-3 fw-bold text-muted"><i class="material-icons text-danger me-2">assignment</i>Winrate</h6>
+                        <small>Web Design</small>
+                        <div class="progress mb-3" style="height: 5px">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 80%"></div>
+                        </div>
+                        <small>Website Markup</small>
+                        <div class="progress mb-3" style="height: 5px">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 72%"></div>
+                        </div>
+                        <small>One Page</small>
+                        <div class="progress mb-3" style="height: 5px">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 89%"></div>
+                        </div>
+                        <small>Mobile Template</small>
+                        <div class="progress mb-3" style="height: 5px">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 55%"></div>
+                        </div>
+                        <small>Backend API</small>
+                        <div class="progress mb-3" style="height: 5px">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 66%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <div class="card h-100 border-0 shadow-sm rounded-3">
+                    <div class="card-body p-4">
+                        <h2 class="text-center mb-4">{% trans "Game statistics" %}</h2>
+                        <div class="row mt-4">
+                            <div class="col-md-4 text-center mb-3">
+                                <h4 class="mb-2">{% trans "Games" %}</h4>
+                                <p class="display-4">{{ profile_data.played_games }}</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-3">
+                                <h4 class="mb-2">{% trans "Wins" %}</h4>
+                                <p class="display-4 text-success">{{ profile_data.wins }}</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-3">
+                                <h4 class="mb-2">{% trans "Loses" %}</h4>
+                                <p class="display-4 text-danger">{{ profile_data.defeats }}</p>
+                            </div>
+                        </div>
+                        <hr class="my-4">
+                        <div class="row mt-3">
+                            <div class="col-md-6 text-center mb-3">
+                                <h4 class="mb-2">{% trans "Total score" %}</h4>
+                                <p class="display-4">{{ profile_data.total_score }}</p>
+                            </div>
+                            <div class="col-md-6 text-center mb-3">
+                                <h4 class="mb-2">{% trans "Winrate" %}</h4>
+                                <p class="display-4">{{ profile_data.winrate }}%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+</div>

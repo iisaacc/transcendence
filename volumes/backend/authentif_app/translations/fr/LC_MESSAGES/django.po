@@ -1,0 +1,194 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-19 10:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: authentif/forms.py:26
+msgid "Password and confirmation are required"
+msgstr "Le mot de passe et la confirmation sont requis"
+
+#: authentif/forms.py:28 authentif/forms.py:109
+msgid "Passwords do not match"
+msgstr "Les mots de passe ne correspondent pas"
+
+#: authentif/forms.py:32
+msgid "Cannot set both password and id_42"
+msgstr "Impossible de définir à la fois le mot de passe et id_42"
+
+#: authentif/forms.py:58
+msgid "New Username"
+msgstr "Nouveau nom d'utilisateur"
+
+#: authentif/forms.py:62
+msgid "New Password"
+msgstr "Nouveau mot de passe"
+
+#: authentif/forms.py:66
+msgid "Confirm Password"
+msgstr "Confirmer le mot de passe"
+
+#: authentif/forms.py:70
+msgid "Avatar"
+msgstr "Avatar"
+
+#: authentif/models.py:56
+msgid "Either password or id_42 must be set."
+msgstr "Le mot de passe ou id_42 doit être défini."
+
+#: authentif/models.py:58
+msgid "You cannot set both password and id_42."
+msgstr "Vous ne pouvez pas définir à la fois le mot de passe et id_42."
+
+#: authentif/views.py:44 authentif/views.py:46 authentif/views.py:362
+#: authentif/views.py:795
+msgid "User not found"
+msgstr "Utilisateur non trouvé"
+
+#: authentif/views.py:66
+msgid "Logged out successfully"
+msgstr "Déconnexion réussie"
+
+#: authentif/views.py:75
+msgid "No active session found"
+msgstr "Aucune session active trouvée"
+
+#: authentif/views.py:94 authentif/views.py:148
+msgid "Wrong credentials"
+msgstr "Identifiants incorrects"
+
+#: authentif/views.py:107
+msgid "2FA required"
+msgstr "2FA requis"
+
+#: authentif/views.py:117 authentif/views.py:251 authentif/views.py:504
+#: authentif/views.py:637 authentif/views.py:813
+msgid "Login successful"
+msgstr "Connexion réussie"
+
+#: authentif/views.py:145
+msgid "Invalid username or password"
+msgstr "Nom d'utilisateur ou mot de passe invalide"
+
+#: authentif/views.py:151 authentif/views.py:288 authentif/views.py:314
+#: authentif/views.py:359
+msgid "Invalid JSON"
+msgstr "JSON invalide"
+
+#: authentif/views.py:154
+msgid "Wrong or invalid password"
+msgstr "Mot de passe non valide"
+
+#: authentif/views.py:156 authentif/views.py:296 authentif/views.py:316
+#: authentif/views.py:368
+msgid "Method not allowed"
+msgstr "Méthode non autorisée"
+
+#: authentif/views.py:229
+msgid "User is inactive"
+msgstr "L'utilisateur est inactif"
+
+#: authentif/views.py:238
+msgid "Failed to create profile"
+msgstr "Échec de la création du profil"
+
+#: authentif/views.py:291 authentif/views.py:365
+msgid "Not a valid password"
+msgstr "Mot de passe non valide"
+
+#: authentif/views.py:294
+msgid "An unexpected error occurred"
+msgstr "Une erreur inattendue s'est produite"
+
+#: authentif/views.py:308
+msgid "User exists"
+msgstr "L'utilisateur existe"
+
+#: authentif/views.py:311
+msgid "User does not exist"
+msgstr "L'utilisateur n'existe pas"
+
+#: authentif/views.py:340 authentif/views.py:678 authentif/views.py:681
+#: authentif/views.py:723 authentif/views.py:727 authentif/views.py:769
+msgid "Unauthorized"
+msgstr "Non autorisé"
+
+#: authentif/views.py:351
+msgid "Profile updated"
+msgstr "Profil mis à jour"
+
+#: authentif/views.py:356
+msgid "Invalid profile update"
+msgstr "Mise à jour du profil invalide"
+
+#: authentif/views.py:675 authentif/views.py:720 authentif/views.py:785
+msgid "Invalid request method. Use POST."
+msgstr "Méthode de requête invalide. Utilisez POST."
+
+#: authentif/views.py:687
+msgid "2FA is already enabled"
+msgstr "2FA est déjà activé"
+
+#: authentif/views.py:709
+msgid "Scan the QR code, then enter the OTP below to confirm"
+msgstr "Scannez le code QR, puis entrez l'OTP ci-dessous pour confirmer"
+
+#: authentif/views.py:734 authentif/views.py:805
+msgid "OTP code is required"
+msgstr "Le code OTP est requis"
+
+#: authentif/views.py:736
+msgid "Invalid JSON format"
+msgstr "Format JSON invalide"
+
+#: authentif/views.py:742
+msgid "No 2FA setup in progress or setup expired"
+msgstr "Aucune configuration 2FA en cours ou configuration expirée"
+
+#: authentif/views.py:757
+msgid "2FA is now enabled"
+msgstr "2FA est maintenant activé"
+
+#: authentif/views.py:761 authentif/views.py:819
+msgid "Invalid OTP code"
+msgstr "Code OTP invalide"
+
+#: authentif/views.py:775
+msgid "2FA disabled successfully"
+msgstr "2FA désactivé avec succès"
+
+#: authentif/views.py:777
+msgid "2FA is not enabled"
+msgstr "2FA n'est pas activé"
+
+#: authentif/views.py:778
+msgid "Invalid request"
+msgstr "Requête invalide"
+
+#: authentif/views.py:789
+msgid "User ID is required"
+msgstr "L'ID utilisateur est requis"
+
+#: authentif/views.py:798
+msgid "2FA is not enabled for this user"
+msgstr "2FA n'est pas activé pour cet utilisateur"
+
+#~ msgid "Token or user mismatch"
+#~ msgstr "Incompatibilité entre le jeton et l'utilisateur"
+
+#~ msgid "2FA verified"
+#~ msgstr "2FA vérifié"

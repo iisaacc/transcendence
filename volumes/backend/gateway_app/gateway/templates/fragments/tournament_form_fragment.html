@@ -1,0 +1,63 @@
+{% load i18n %}
+{% load static %}
+<div id="tournament" class="page p-4">
+  <div
+    class="d-flex flex-column justify-content-center align-items-center mx-auto">
+    
+    <h1 class="mb-3 align-self-start">{% trans "Tournament" %}</h1>
+    
+    <div class="d-flex flex-column gap-2">
+      
+      <h2 class="align-self-start fs-5">{% trans "Choose game:" %}</h2>
+
+      <div class="mb-3 btn-group mx-auto" role="group" aria-label="{% trans 'Game selection' %}">
+
+        <input type="radio" class="btn-check" name="chosenGame-tnmt" id="pong" autocomplete="off" checked>
+        <label class="btn btn-outline-success d-flex flex-column justify-content-between align-items-center p-3" for="pong" style="max-width: 250px;">
+          <h4 class="mb-3">Space Pong</h4>
+          <img src="{% static 'images/cover-pong-8bits.jpg' %}" alt="Space Pong" class="img-fluid">
+        </label>
+      
+        <input type="radio" class="btn-check" name="chosenGame-tnmt" id="cows" autocomplete="off">
+        <label class="btn btn-outline-success d-flex flex-column justify-content-between align-items-center p-3" for="cows" style="max-width: 250px;">
+          <h4 class="mb-3">Space Cows</h4>
+          <img src="{% static 'images/cover-cows.jpg' %}" alt="Space Cows" class="img-fluid">
+        </label>
+      
+      </div>
+      
+      <h2 class="align-self-start fs-5">{% trans "Enter player names:" %}</h2>
+
+      <div id="error-div" class="alert alert-danger fs-6 p-3" style="display: none;";>
+        <div class="errorlist nonfield m-0 p-0">
+        </div>
+      </div>
+      
+      <div class="d-flex flex-wrap align-items-center justify-content-center">
+        <div class="me-3 mb-3" style="min-width: 180px">
+          <label for="player1-input" class="form-label">{{ info.p1_label }}</label>
+          <input type="text" class="form-control" id="player1-input" name="p1_name" value="{{ info.p1_value }}" required>
+        </div>
+
+        <div class="me-3 mb-3" style="min-width: 180px">
+          <label for="player2-input" class="form-label">{% trans 'Name Player' %} 2</label>
+          <input type="text" class="form-control" id="player2-input" name="p2_name" value="{% trans 'Name' %}2" required>
+        </div>
+
+        <div class="me-3 mb-3" style="min-width: 180px">
+          <label for="player3-input" class="form-label">{% trans 'Name Player' %} 3</label>
+          <input type="text" class="form-control" id="player3-input" name="p3_name" value="{% trans 'Name' %}3" required>
+        </div>
+
+        <div class="me-3 mb-3" style="min-width: 180px">
+          <label for="player4-input" class="form-label">{% trans 'Name Player' %} 4</label>
+          <input type="text" class="form-control" id="player4-input" name="p4_name" value="{% trans 'Name' %}4" required>
+        </div>
+
+      </div>
+
+      <button type="button" class="btn btn-secondary" onclick="playTournament()">{% trans "Start Tournament" %}</button>
+
+    </div>
+  </div>
+</div>

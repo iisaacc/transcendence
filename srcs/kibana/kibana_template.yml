@@ -1,0 +1,22 @@
+# Elasticsearch URL
+elasticsearch.hosts: ["https://elasticsearch:9200"]
+
+# Kibana server settings
+server.port: 5601
+server.host: "0.0.0.0"
+
+# X-Pack security
+
+# SSL configuration
+server.ssl.enabled: true
+elasticsearch.ssl.verificationMode: certificate
+elasticsearch.ssl.certificateAuthorities: ["/certs/cert.pem"]
+elasticsearch.ssl.certificate: /certs/cert.pem
+elasticsearch.ssl.key: /certs/key.pem
+
+server.ssl.key: /certs/key.pem
+server.ssl.certificate: /certs/cert.pem
+
+# Elasticsearch credentials
+elasticsearch.username: elastic
+elasticsearch.password: ${ELASTICSEARCH_PASSWORD}

@@ -1,0 +1,149 @@
+{% load i18n %}
+{% load static %}
+{% comment %} {% load custom_filters %} {% endcomment %}
+<div class="container-fluid">
+  <a class="navbar-brand ps-2" href="{% url 'home' %}"
+    onclick="navigate(event, '/')">Pongscendence</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+    aria-expanded="false" aria-label="{% trans "Toggle navigation" %}">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+    <ul class="navbar-nav ms-auto">
+
+      <li class="nav-item d-flex align-items-center">
+        <a class="nav-link active" aria-current="page" href="{% url 'home' %}"
+          onclick="navigate(event, '/')">{% trans "Home" %}</a>
+      </li>
+
+      <li class="nav-item d-flex align-items-center">
+        <a class="nav-link" href="{% url 'play' %}"
+          onclick="navigate(event, '{% url 'play' %}')">{% trans "Play" %}</a>
+      </li>
+
+      <li class="nav-item d-flex align-items-center">
+        <a class="nav-link" href="{% url 'tournament' %}"
+          onclick="navigate(event, '{% url 'tournament' %}')">{% trans "Tournament" %}</a>
+      </li>
+
+      {% if not user.username or user.username == "" %}
+        <li class="nav-item d-flex align-items-center">
+          <a class="nav-link" href="{% url 'signup' %}"
+            onclick="navigate(event, '{% url 'signup' %}')">{% trans "Sign Up" %}</a>
+        </li>
+
+        <li class="nav-item d-flex align-items-center">
+          <a class="nav-link" href="{% url 'login' %}"
+            onclick="navigate(event, '{% url 'login' %}')">{% trans "Log In" %}</a>
+        </li>
+
+      <!-- Profile access -->
+      {% else %}
+        <li class="nav-item dropdown d-flex align-items-center">
+          <p class="nav-link dropdown-toggle m-0" id="navbarDropdownUser"
+            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {% if user.avatar and user.avatar.url %}
+              <img src="{{ user.avatar.url }}" alt="{{ user.username }}" style="height: 3rem; width: 3rem; object-fit: cover; border-radius: 50%; border: 2px solid #fff;">
+            {% else %}
+              <img src="{% static 'images/default-avatar.svg' %}" alt="{% trans "default icon" %}"
+              style="height: 3rem; width: 3rem; object-fit: cover; border-radius: 50%; border: 2px solid #fff;">
+            {% endif %}
+          </p>
+
+          <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownUser" style="--bs-dropdown-min-width: 6rem">
+            <li>
+              <a class="dropdown-item bg-dark text-light" href="{% url 'profile' %}" onclick="navigate(event, '{% url 'profile' %}')">{% trans "Profile" %}</a>
+            </li>
+            <li>
+              <a class="dropdown-item bg-dark text-light" href="{% url 'edit_profile' %}" onclick="navigate(event, '{% url 'edit_profile' %}')">{% trans "Edit profile" %}</a>
+            </li>
+            <li>
+              <a class="dropdown-item bg-dark text-light" href="{% url 'user_profile' user.id %}" onclick="navigate(event, '{% url 'user_profile' user.id %}')">{% trans "Stats" %}</a>
+            </li>
+            <li>
+              <a class="dropdown-item bg-dark text-light" href="{% url 'list_friends' %}" onclick="navigate(event, '{% url 'list_friends' %}')">{% trans "My friends" %}</a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item bg-dark text-light" href="{% url 'logout' %}" onclick="navigate(event, '{% url 'logout' %}')">{% trans "Logout" %}</a>
+            </li> 
+          </ul>
+
+        </li>
+      {% endif %}
+
+      <!-- Dropdown to change the language -->
+      <li class="nav-item dropdown d-flex align-items-center" >
+
+        <p class="nav-link dropdown-toggle m-0" id="navbarDropdownLanguage"
+          role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="/media/utils_icons/language.png" alt="{{ user.username }}"
+            style="height: 2rem; width: 2rem; object-fit: cover;">
+        </p>
+
+        <ul class="dropdown-menu dropdown-menu-end bg-dark p-0" aria-labelledby="navbarDropdownLanguage" style="--bs-dropdown-min-width: 5rem">
+
+          <li class="language-btn dropdown-item bg-dark text-light p-0">
+            <div onclick="changeLanguage('en')" class="d-flex justify-content-center align-items-center p-1" style="cursor: pointer;">
+              <img src="/media/utils_icons/usa.png" alt="English" class="img-fluid" style="height: 2rem; width: 2rem; object-fit: cover;">
+            </div>
+          </li>
+
+          <li class="language-btn dropdown-item bg-dark text-light p-0">
+            <div onclick="changeLanguage('es')" class="d-flex justify-content-center align-items-center p-1" style="cursor: pointer;">
+              <img src="/media/utils_icons/spain.png" alt="Spanish" class="img-fluid" style="height: 2rem; width: 2rem; object-fit: cover;">
+            </div>
+          </li>
+
+          <li class="language-btn dropdown-item bg-dark text-light p-0">
+            <div onclick="changeLanguage('fr')" class="d-flex justify-content-center align-items-center p-1" style="cursor: pointer;">
+              <img src="/media/utils_icons/france.png" alt="French" class="img-fluid" style="height: 2rem; width: 2rem; object-fit: cover;">
+            </div>
+          </li>
+        </ul>
+
+      </li>
+
+      <!-- Dropdown notifications -->
+      {% comment %} {% if user.is_authenticated %} {% endcomment %}
+        <li class="nav-item dropdown d-flex align-items-center">
+          {% if notifications %}
+
+            <p class="nav-link dropdown-toggle m-0" id="navbarDropdownNotifications"
+            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="/media/utils_icons/bell_up.png" alt="{{ user.username }}" style="height: 24px; width: 24px; object-fit: cover;">
+            </p>
+
+            <ul class="dropdown-menu dropdown-menu-end bg-dark" aria-labelledby="navbarDropdownNotifications">
+              {% for notification in notifications %}
+              <li class="dropdown-item text-white">
+                {{ notification.message }}
+              </li>
+              {% endfor %}
+            </ul>
+
+          {% else %}
+
+            <p class="nav-link dropdown-toggle m-0" id="navbarDropdownNotifications" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="/media/utils_icons/bell_down.png" alt="{{ user.username }}" style="height: 24px; width: 24px; object-fit: cover;">
+            </p>
+
+            <ul class="dropdown-menu dropdown-menu-end bg-dark" id="notificationClassContent" aria-labelledby="navbarDropdownNotifications" style="max-height: 300px; overflow-y: auto; width: max-content;">
+              <li class="dropdown-item text-white" id="notificationContent" style="--bs-dropdown-link-hover-bg: transparent; --bs-dropdown-link-active-bg: transparent;" >{% trans "You have no notifications" %}
+              </li>
+            </ul>
+
+          {% endif %}
+        </li>
+      {% comment %} {% endif %} {% endcomment %}
+    </ul>
+
+  </div>
+</div>
+
+{% comment %} <a class="dropdown-item bg-dark text-light" href="#" onclick="changeLanguage('en')">{% trans "English" %}</a> {% endcomment %}
+

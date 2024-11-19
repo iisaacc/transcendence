@@ -1,0 +1,304 @@
+/* styles.css */
+/* @font-face {
+  font-family: "VT323";
+  src: url(../fonts/VT323-Regular.ttf);
+}
+@font-face {
+  font-family: "PixeloidMono";
+  src: url(../fonts/PixeloidMono-d94EV.ttf);
+} */
+@font-face {
+  font-family: "PixeloidSans";
+  src: url(../fonts/PixeloidSans-mLxMm.ttf);
+}
+
+html, body {
+  /* font-family: "VT323", monospace; */
+  /* font-family: "PixeloidMono", monospace; */
+  font-family: "PixeloidSans", "PixeloidSansBold", sans-serif;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: #181a1b;
+}
+
+#mainHeader {
+  height: 80px;
+}
+
+.vertical-line {
+  border-left: 2px solid #000;
+  height: 100%;
+  width: 0px;
+}
+
+/**************************/
+/*** Floating animation ***/
+/**************************/
+
+.floating {
+  animation-name: spin, floating;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes floating {
+  0% { translate: -25px 25px; }
+  25% { translate: -18px -22px; }
+  50% { translate: 15px -25px; }
+  75% { translate: 22px 18px; }
+  100% { translate: -25px 25px; }
+}
+
+@keyframes spin {
+  0% { rotate: -5deg; }
+  25% { rotate: 7deg; }
+  50% { rotate: -8deg; }
+  75% { rotate: 6deg; }
+  100% { rotate: -5deg; }
+}
+
+/***************************/
+/*** GAME and TOURNAMENT ***/
+/***************************/
+
+#game-container {
+  background-color: #000;
+  height: 550px;
+  width: 700px;
+}
+
+#startGame-button, #nextRound-button, #playAgain-button {
+  background-color: #000;
+  color: #d3d3d3;
+  border: solid 4px #d3d3d3;
+  height: 80px;
+}
+
+#player1-container, #player2-container {
+  min-width: 296px;
+}
+
+#photoPlayer1, #photoPlayer2 {
+  border-radius: 50%;
+}
+
+
+/**************************/
+/***      KOW-PONG      ***/
+/**************************/
+
+.kow-pong-container {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  margin: 50px auto;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.paddle {
+  position: absolute;
+  width: 20px;
+  height: 100px;
+  top: 0;
+  background-color: #d3d3d3;
+}
+.left-paddle {
+  left: 40px;
+  animation: moveLeftPaddle 5s linear infinite;
+}
+.right-paddle {
+  right: 40px;
+  animation: moveRightPaddle 5s linear infinite;
+}
+
+.kow-ball {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  animation: moveKowBall 5s linear infinite;
+}
+
+@keyframes moveLeftPaddle {
+  0% { top: 5%; }
+  25% { top: 5%; }
+  50% { top: calc(95% - 100px); }
+  75% { top: calc(95% - 100px); }
+  100% { top: 5%; }
+}
+@keyframes moveRightPaddle {
+  0% { top: calc(50% - 100px); }
+  25% { top: calc(70% - 100px); }
+  50% { top: calc(70% - 100px); }
+  75% { top: calc(50% - 100px); }
+  100% { top: calc(50% - 100px); }
+}
+
+@keyframes moveKowBall {
+  0% {
+    left: 60px;
+    top: 0;
+    rotate: -90deg;
+  }
+  25% {
+    left: calc(100% - 140px);
+    top: calc(70% - 80px);
+    rotate: 360deg;
+  }
+  50% {
+    left: 60px;
+    top: calc(90% - 80px);
+    rotate: -360deg;
+  }
+  75% {
+    left: calc(100% - 140px);
+    top: calc(50% - 80px);
+    rotate: -0deg;
+  }
+  100% {
+    left: 60px;
+    top: 0;
+    rotate: -90deg;
+  }
+}
+
+
+
+
+/* Custom styles for the Bootstrap modal */
+#inviteModal .profile-modal-content {
+	background-color: #64686c;
+	color: #fefefe;
+}
+
+#inviteModal .modal-header {
+	background-color: #424242;
+	color: #f9f9f9;
+}
+
+#inviteModal .modal-footer {
+	background-color: #424242;
+	color: #f9f9f9;
+}
+
+/*==================================================
+Nearby People CSS
+==================================================*/
+
+.online-status-chat {
+  top: 15px;
+  left: 10px;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.section h2 {
+  margin-bottom: 40px;
+}
+
+.table th.date-column,
+.table td.date-column {
+    width: 20%;
+    white-space: nowrap;
+}
+
+#chatButton img {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+#chatModal {
+  z-index: 1100;
+}
+
+#messageModal {
+  z-index: 1101;
+}
+
+.blocked-contact {
+  background-color: grey;
+  opacity: 0.5;
+  cursor: not-allowed !important;
+}
+
+.custom-contact {
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.custom-contact:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.custom-contact:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.selected-contact {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.no-friends-message {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.form-check-input:checked {
+  background-color: red;
+  border-color: red;
+}
+.display-4 {
+  font-size: 2.5rem;
+}
+
+.blocked {
+    pointer-events: none;
+    opacity: 0.5;
+    background-color: #f0f0f0;
+}
+
+.blocked .form-check {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.invite-button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.game-controller-icon {
+  width: 4vw;
+  height: 10vh;
+  position: absolute;
+  top: -1.5vh;
+  right: 5.5vw;
+  cursor: pointer;
+}
+
+#gameInvitePopup {
+  top: 60px;
+  right: 20px;
+  z-index: 2;
+}
+
+#contactContainer {
+  height: auto;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}

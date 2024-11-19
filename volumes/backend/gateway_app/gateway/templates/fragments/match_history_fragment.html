@@ -1,0 +1,71 @@
+{% load i18n %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+        <h2 class="text-center">{{ username }}'s {% trans "Game statistics" %}</h2>
+        <div class="card shadow mt-4">
+            <div class="card-body">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                <h4>{% trans "Games" %}</h4>
+                <p class="display-4">{{ games_data.total_games }}</p>
+                </div>
+                <div class="col-md-4 text-center">
+                <h4>{% trans "Wins" %}</h4>
+                <p class="display-4 text-success">{{ games_data.wins }}</p>
+                </div>
+                <div class="col-md-4 text-center">
+                <h4>{% trans "Loses" %}</h4>
+                <p class="display-4 text-danger">{{ games_data.defeats }}</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row mt-3">
+                <div class="col-md-4 text-center">
+                <h4>{% trans "Total score" %}</h4>
+                <p class="display-4">{{ games_data.total_score }}</p>
+                </div>
+                <div class="col-md-4 text-center">
+                <h4>{% trans "Winrate" %}</h4>
+                <p class="display-4">{{ games_data.winrate }}</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="text-center">{% trans "Game History" %}</h2>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th class="date-column">{% trans "Date" %}</th>
+                <th>{% trans "Type" %}</th>
+                <th>{% trans "Player 1" %}</th>
+                <th>{% trans "Player 2" %}</th>
+                <th>{% trans "Result" %}</th>
+                <th>{% trans "Winner" %}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for game in games_data.game_registry %}
+              <tr class="{% if game.game_winner_id|stringformat:"i" == user_id|stringformat:"i" %} bg-success text-white victory-border {% else %} bg-danger text-white defeat-border {% endif %}">
+                <td class="date-column">{{ game.date }}</td>
+                <td>{{ game.game_type }}</td>
+                <td>{{ game.p1_name }}</td>
+                <td>{{ game.p2_name }}</td>
+                <td>{{ game.p1_score }} - {{ game.p2_score }}</td>
+                <td>{{ game.game_winner_name }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+</div>

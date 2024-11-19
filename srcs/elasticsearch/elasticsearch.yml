@@ -1,0 +1,24 @@
+# Network settings
+network.host: 0.0.0.0
+
+# Cluster settings
+cluster.name: "elk-cluster"
+
+# Single-node discovery
+discovery.type: single-node
+
+# X-Pack settings
+xpack.license.self_generated.type: trial
+xpack.security.enabled: true
+xpack.monitoring.collection.enabled: true
+
+# SSL configuration
+xpack.security.transport.ssl.enabled: true
+xpack.security.http.ssl.enabled: true
+xpack.security.http.ssl.key: /usr/share/elasticsearch/config/certs/key.pem
+xpack.security.http.ssl.certificate: /usr/share/elasticsearch/config/certs/cert.pem
+xpack.security.http.ssl.verification_mode: certificate
+xpack.security.transport.ssl.key: /usr/share/elasticsearch/config/certs/key.pem
+xpack.security.transport.ssl.certificate: /usr/share/elasticsearch/config/certs/cert.pem
+xpack.security.transport.ssl.verification_mode: certificate
+

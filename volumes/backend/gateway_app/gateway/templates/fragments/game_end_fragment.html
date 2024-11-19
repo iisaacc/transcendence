@@ -1,0 +1,8 @@
+{% load i18n %}
+{% load static %}
+
+<p id="startGame-winner" class="fs-1">{{ game_result.game_winner_name }} {% trans "won" %}!</p>
+{% comment %} <button id="playAgain-button" class="btn btn-secondary rounded-0 fs-1 px-4">{% trans "Play Again" %}</button> {% endcomment %}
+<a class="btn btn-secondary rounded-0 fs-1 px-4" style="border: solid 3px #d3d3d3;" href="{% url 'play' %}"
+    onclick="navigate(event, '{% url 'play' %}')">{% trans "Go back to Play " %}</a>
+    

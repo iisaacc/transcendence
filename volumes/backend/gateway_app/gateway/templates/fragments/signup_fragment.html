@@ -1,0 +1,44 @@
+{% load i18n %}
+<div id="signup" class="page p-4">
+  <div
+    class="d-flex flex-column justify-content-center align-items-center ms-auto me-auto"
+    style="width: 256px;">
+    
+    <h1 class="mb-3 align-self-start">{% trans "Sign Up" %}</h1>
+
+    <form method="post" action="{% url 'signup' %}">
+      {% csrf_token %}
+
+      {% if form.non_field_errors %}
+        <div class="alert alert-danger fs-6 p-3">
+          <div class="errorlist nonfield m-0 p-0">
+            {{ form.non_field_errors.0 }}
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="mb-3">
+        <label for="{{ form.username.id_for_label }}" class="form-label">{{ form.username.label }}</label>
+        {{ form.username }}
+        <div class="text-danger fs-6">{{ form.username.errors }}</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="{{ form.password.id_for_label }}" class="form-label">{{ form.password.label }}</label>
+        {{ form.password }}
+        <div class="text-danger fs-6">{{ form.password.errors }}</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="{{ form.confirm_password.id_for_label }}" class="form-label">{{ form.confirm_password.label }}</label>
+        {{ form.confirm_password }}
+        <div class="text-danger fs-6">{{ form.confirm_password.errors }}</div>
+      </div>
+
+      <button type="submit" class="btn btn-secondary">{% trans "Sign Up" %}</button>
+    </form>
+
+    <p class="mt-4"><a href="{% url 'login' %}" onclick="navigate(event, '{% url 'login' %}')" class="link-secondary">{% trans "Already have an account?" %}</a></p>
+
+  </div>
+</div>
